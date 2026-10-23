@@ -22,11 +22,12 @@ Solo Python 3 (usa `hashlib` y `urllib`, ambos incluidos). Necesita conexión a 
 ## Uso
 
 ```bash
-python3 chequear_pass.py            # te la pide oculta (no se ve al tipear)
-python3 chequear_pass.py --texto    # la escribís visible (menos seguro)
+python3 chequear_pass.py                      # una, oculta (no se ve al tipear)
+python3 chequear_pass.py --texto              # una, visible
+python3 chequear_pass.py --archivo claves.txt # varias, una por línea
 ```
 
-Te dice si la contraseña fue filtrada y cuántas veces apareció en bases robadas.
+Te dice si cada contraseña fue filtrada y cuántas veces apareció en bases robadas. Con `--archivo` chequea una lista entera y muestra un resumen (sin imprimir las contraseñas completas).
 
 ## Nota
 
@@ -35,5 +36,5 @@ Que una contraseña no esté filtrada no significa que sea fuerte, solo que no a
 ## Roadmap
 
 - [x] v1: chequear una contraseña contra HaveIBeenPwned (k-anonymity)
-- [ ] v2: chequear varias de una (desde un archivo)
-- [ ] v3: integrarlo con el gestor (revisar todo el vault de una)
+- [x] v2: chequear varias de una (desde un archivo)
+- [x] v3: integrado en el gestor de contraseñas (comando `check` revisa todo el vault)
